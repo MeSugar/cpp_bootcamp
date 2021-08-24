@@ -2,7 +2,7 @@
 
 PhoneBook::PhoneBook(void)
 {
-	this->number = 0;
+	this->_number = 0;
 	std::cout << "Welcome to my Awesome Phone Book!" << std::endl;
 	std::cout << std::endl;
 	std::cout << "Please, use one of the following commands:" << std::endl;
