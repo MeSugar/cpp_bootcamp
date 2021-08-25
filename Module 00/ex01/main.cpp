@@ -1,6 +1,6 @@
 #include <iostream>
+#include <stdlib.h>
 #include "PhoneBook.class.hpp"
-#include "Contact.class.hpp"
 
 int main()
 {
@@ -13,6 +13,10 @@ int main()
 			exit(0);
 		else if (!buf.compare("ADD"))
 			PhoneBook.add_contact();
+		else if (!buf.compare("SEARCH"))
+			PhoneBook.search_contact();
+		else
+			std::cout << "Invalid option. Please, use ADD, SEARCH or EXIT" << std::endl;
 	}
 	
 
