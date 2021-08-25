@@ -22,7 +22,7 @@ PhoneBook::~PhoneBook(void)
 void	PhoneBook::add_contact(void)
 {
 	int oldest_contact;
-	char buf;
+	std::string buf;
 
 	if (this->_number < 8)
 	{
@@ -31,10 +31,11 @@ void	PhoneBook::add_contact(void)
 	}
 	else
 	{
-		std::cout << "The is book full!" << std::endl;
-		std::cout << "Do you want to replace it's oldest contact?[Y/n]" << std::endl;
+		std::cout << std::endl << "Warning! The is book full!" << std::endl;
+		std::cout << "Do you want to replace it's oldest contact?" << std::endl;
+		std::cout << "Type \"Yes\" if you are sure"  << std::endl;
 		std::cin >> buf;
-		if (buf == 'Y')
+		if (!buf.compare("Yes"))
 		{
 			oldest_contact = this->find_oldest_contact();
 			this->_contact[oldest_contact].collect_data(oldest_contact);
@@ -96,8 +97,8 @@ void	PhoneBook::print_contact_content(void)
 	std::string	buf;
 	char		c[2];
 
-	std::to_chars(c, c + 1, this->_number);
-	std::cout << "Please, enter the index of the contact in order to see it's information" << std::endl;
+	c[0] = this->_number + '0';
+	std::cout << std::endl <<"Please, enter the index of the contact in order to see it's information" << std::endl;
 	std::cin >> buf;
 	if (buf.size() == 1 && (buf[0] > '0' && buf[0] <= c[0]))
 		this->_contact[atoi(buf.c_str()) - 1].print_content();

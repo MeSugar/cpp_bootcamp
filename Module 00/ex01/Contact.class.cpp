@@ -54,7 +54,7 @@ void Contact::print_table_content(void)
 		}
 		std::cout << "|" << std::setw(10) << std::right << buf;
 	}	
-	std::cout << "|" << std::endl << std::endl;
+	std::cout << "|" << std::endl;
 }
 
 void	Contact::print_content(void)

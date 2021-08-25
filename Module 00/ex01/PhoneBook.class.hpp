@@ -5,6 +5,7 @@
 #include <ctime>
 #include <iomanip>
 #include <charconv>
+#include <stdlib.h>
 #include "Contact.class.hpp"
 
 class PhoneBook
