@@ -8,7 +8,7 @@ int main()
 	PhoneBook PhoneBook;
 
 	while (1) {
-		std::getline(std::cin, buf);
+		std::cin >> buf;
 		if (!buf.compare("EXIT"))
 			exit(0);
 		else if (!buf.compare("ADD"))

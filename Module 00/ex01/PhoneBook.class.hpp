@@ -4,6 +4,7 @@
 #include <iostream>
 #include <ctime>
 #include <iomanip>
+#include <charconv>
 #include "Contact.class.hpp"
 
 class PhoneBook
@@ -19,6 +20,7 @@ public:
 	int		find_oldest_contact(void);
 	void	search_contact(void);
 	void	print_table_header(void);
+	void	print_contact_content(void);
 };
 
 #endif

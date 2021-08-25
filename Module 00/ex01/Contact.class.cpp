@@ -24,9 +24,10 @@ void Contact::collect_data(int number)
 	for (i = 0; i < 5; i++)
 	{
 		std::cout << this->_field_names[i] << ": ";
-		std::getline(std::cin, this->_data[i]);
+		std::cin >> this->_data[i];
 	}
 	std::time(&this->_last_change);
+	std::cout << std::endl << "Hooray! The data was saved successfully!" << std::endl << std::endl;
 }
 
 int	Contact::time_since_last_change(void)
@@ -37,7 +38,7 @@ int	Contact::time_since_last_change(void)
 	return (curr_time - this->_last_change);
 }
 
-void Contact::print_contents(void)
+void Contact::print_table_content(void)
 {
 	std::string buf;
 	int i;
@@ -53,5 +54,19 @@ void Contact::print_contents(void)
 		}
 		std::cout << "|" << std::setw(10) << std::right << buf;
 	}	
-	std::cout << "|" << std::endl;
+	std::cout << "|" << std::endl << std::endl;
+}
+
+void	Contact::print_content(void)
+{
+	int i;
+
+	std::cout << "=============================================" << std::endl;
+	std::cout << "Contact's info" << std::endl << std::endl;
+	for (i = 0; i < 5; i++)
+	{
+		std::cout << this->_field_names[i] << ": ";
+		std::cout << this->_data[i] << std::endl;
+	}
+	std::cout << "=============================================" << std::endl;
 }

@@ -10,7 +10,7 @@ PhoneBook::PhoneBook(void)
 	std::cout << "ADD    - add a new contact" << std::endl;
 	std::cout << "SEARCH - display a list of available contacts" << std::endl;
 	std::cout << "EXIT   - exit Phone Book" << std::endl;
-	std::cout << "=============================================" << std::endl;
+	std::cout << "=============================================" << std::endl << std::endl;
 	return ;
 }
 
@@ -19,7 +19,7 @@ PhoneBook::~PhoneBook(void)
 	return ;
 }
 
-void PhoneBook::add_contact(void)
+void	PhoneBook::add_contact(void)
 {
 	int oldest_contact;
 	char buf;
@@ -40,7 +40,7 @@ void PhoneBook::add_contact(void)
 			this->_contact[oldest_contact].collect_data(oldest_contact);
 		}
 		else
-			std::cout << "Invalid option. Returning to the main menu..." << std::endl;
+			std::cout << "Invalid option. Returning to the main menu..." << std::endl << std::endl;
 	}
     return ;
 }
@@ -65,7 +65,7 @@ int	PhoneBook::find_oldest_contact(void)
 	return (oldest_contact);
 }
 
-void PhoneBook::search_contact(void)
+void	PhoneBook::search_contact(void)
 {
 	int i;
 
@@ -75,14 +75,32 @@ void PhoneBook::search_contact(void)
 	{
 		this->print_table_header();
 		for (i = 0; i < this->_number; i++)
-			this->_contact[i].print_contents();
+			this->_contact[i].print_table_content();
+		this->print_contact_content();
 	}
 }
 
-void PhoneBook::print_table_header(void)
+void	PhoneBook::print_table_header(void)
 {
+	std::cout << "=============================================" << std::endl;
+	std::cout << "                Contacts table               " << std::endl;
+	std::cout << "=============================================" << std::endl << std::endl;
 	std::cout << "|" << std::setw(10) << "Index";
 	std::cout << "|" << std::setw(10) << "First name";
 	std::cout << "|" << std::setw(10) << "Last name";
 	std::cout << "|" << std::setw(10) << "Nickname" << "|" << std::endl;
+}
+
+void	PhoneBook::print_contact_content(void)
+{
+	std::string	buf;
+	char		c[2];
+
+	std::to_chars(c, c + 1, this->_number);
+	std::cout << "Please, enter the index of the contact in order to see it's information" << std::endl;
+	std::cin >> buf;
+	if (buf.size() == 1 && (buf[0] > '0' && buf[0] <= c[0]))
+		this->_contact[atoi(buf.c_str()) - 1].print_content();
+	else
+		std::cout << "Invalud input. Returning to the main menu..." << std::endl;
 }

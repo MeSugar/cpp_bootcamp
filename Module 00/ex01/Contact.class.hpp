@@ -18,8 +18,9 @@ public:
 	~Contact(void);
 
 	void	collect_data(int number);
-	int		time_since_last_change();
-	void	print_contents();
+	int		time_since_last_change(void);
+	void	print_table_content(void);
+	void	print_content(void);
 };
 
 #endif
