@@ -1,12 +1,12 @@
-NAME		=	MyAwesomePhoneBook
+NAME		=	AccountsStatus
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+# CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 CC			=	clang++
 
 INCLUDES	=	Account.hpp
 
-SRCS		=	Account.cpp tests.cpp
+SRCS		=	Account.cpp test.cpp
 
 all : $(NAME)
 
