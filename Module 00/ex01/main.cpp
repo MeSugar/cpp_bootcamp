@@ -8,7 +8,9 @@ int main()
 	PhoneBook PhoneBook;
 
 	while (1) {
-		std::cin >> buf;
+		std::getline(std::cin, buf);
+		if (std::cin.eof())
+            return (0);
 		if (!buf.compare("EXIT"))
 			exit(0);
 		else if (!buf.compare("ADD"))
@@ -18,12 +20,5 @@ int main()
 		else
 			std::cout << "Invalid option. Please, use ADD, SEARCH or EXIT" << std::endl;
 	}
-	
-
-	// new_book.foo();
-	// new_book.x = 51;
-	// new_book.foo();
-	// new_book.x = 21;
-	// std::cout << new_book.x << std::endl;
 	return (0);
 }

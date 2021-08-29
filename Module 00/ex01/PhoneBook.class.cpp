@@ -34,7 +34,7 @@ void	PhoneBook::add_contact(void)
 		std::cout << std::endl << "Warning! The is book full!" << std::endl;
 		std::cout << "Do you want to replace it's oldest contact?" << std::endl;
 		std::cout << "Type \"Yes\" if you are sure"  << std::endl;
-		std::cin >> buf;
+		std::getline(std::cin, buf);
 		if (!buf.compare("Yes"))
 		{
 			oldest_contact = this->find_oldest_contact();
@@ -83,13 +83,15 @@ void	PhoneBook::search_contact(void)
 
 void	PhoneBook::print_table_header(void)
 {
-	std::cout << "=============================================" << std::endl;
-	std::cout << "                Contacts table               " << std::endl;
-	std::cout << "=============================================" << std::endl << std::endl;
+	std::cout << "/////////////////////////////////////////////" << std::endl;
+	std::cout << "|                  Phone book               |" << std::endl;
+	std::cout << "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" << std::endl << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|" << std::setw(10) << "Index";
 	std::cout << "|" << std::setw(10) << "First name";
 	std::cout << "|" << std::setw(10) << "Last name";
 	std::cout << "|" << std::setw(10) << "Nickname" << "|" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 }
 
 void	PhoneBook::print_contact_content(void)
@@ -99,7 +101,7 @@ void	PhoneBook::print_contact_content(void)
 
 	c[0] = this->_number + '0';
 	std::cout << std::endl <<"Please, enter the index of the contact in order to see it's information" << std::endl;
-	std::cin >> buf;
+	std::getline(std::cin, buf);
 	if (buf.size() == 1 && (buf[0] > '0' && buf[0] <= c[0]))
 		this->_contact[atoi(buf.c_str()) - 1].print_content();
 	else
