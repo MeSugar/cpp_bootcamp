@@ -4,9 +4,9 @@ CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 CC			=	clang++
 
-INCLUDES	=	PhoneBook.class.hpp Contact.class.hpp
+INCLUDES	=	ClassPhoneBook.hpp ClassContact.hpp
 
-SRCS		=	PhoneBook.class.cpp Contact.class.cpp main.cpp
+SRCS		=	ClassPhoneBook.cpp ClassContact.cpp main.cpp
 
 all : $(NAME)
 

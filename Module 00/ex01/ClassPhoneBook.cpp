@@ -1,4 +1,4 @@
-#include "PhoneBook.class.hpp"
+#include "ClassPhoneBook.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -100,7 +100,7 @@ void	PhoneBook::print_contact_content(void)
 	char		c[2];
 
 	c[0] = this->_number + '0';
-	std::cout << std::endl <<"Please, enter the index of the contact in order to see it's information" << std::endl;
+	std::cout << std::endl <<"Please, enter the index of a contact in order to see it's information" << std::endl;
 	std::getline(std::cin, buf);
 	if (buf.size() == 1 && (buf[0] > '0' && buf[0] <= c[0]))
 		this->_contact[atoi(buf.c_str()) - 1].print_content();

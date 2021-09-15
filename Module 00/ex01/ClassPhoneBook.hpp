@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <charconv>
 #include <stdlib.h>
-#include "Contact.class.hpp"
+#include "ClassContact.hpp"
 
 class PhoneBook
 {
