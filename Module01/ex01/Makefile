@@ -1,12 +1,12 @@
-NAME		=	MyAwesomePhoneBook
+NAME		=	Moar_brainz!
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 CC			=	clang++
 
-INCLUDES	=	ClassPhoneBook.hpp ClassContact.hpp
+INCLUDES	=	Zombie.hpp
 
-SRCS		=	ClassPhoneBook.cpp ClassContact.cpp main.cpp
+SRCS		=	Zombie.cpp ZombieHorde.cpp main.cpp
 
 all : $(NAME)
 
