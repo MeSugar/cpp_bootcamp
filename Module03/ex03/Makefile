@@ -1,12 +1,12 @@
-NAME		=	ScavTrap
+NAME		=	DiamondTrap
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CFLAGS		=	-Wall -Wextra -Werror -Wshadow -std=c++98
 
 CC			=	clang++
 
-INCLUDES	=	ClapTrap.hpp ScavTrap.hpp
+INCLUDES	=	ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
-SRCS		=	ClapTrap.cpp ScavTrap.cpp main.cpp
+SRCS		=	ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 
 all : $(NAME)
 

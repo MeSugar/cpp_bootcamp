@@ -46,6 +46,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		}
 		else
 			this->_hitpoints -= amount;
+		std::cout << "ClapTrap " << this->_name << " has " << this->_hitpoints << " hitpoints" << std::endl;
 	}
 	else
 		std::cout << "God! Stop please! ClapTrap " << this->_name << " is already broken and cannot take any damage!" << std::endl;
@@ -60,6 +61,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 			this->_hitpoints = 100;
 		else
 			this->_hitpoints += amount;
+		std::cout << "Now ClapTrap " << this->_name << " has " << amount << " hitpoints!" << std::endl;
 	}
 	else
 		std::cout << "Thank you, dear! You don't need to bother, cuz ClapTrap " << this->_name << " is healthy and still in it's prime!" << std::endl;

@@ -3,23 +3,23 @@
 ClapTrap::ClapTrap(std::string const name)
 : _name(name), _hitpoints(10), _energy_points(10), _attack_damage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = src;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "ClapTrap assignation operator called" << std::endl;
 	this->_name = src._name;
 	this->_hitpoints = src._hitpoints;
 	this->_energy_points = src._energy_points;
@@ -30,7 +30,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 //Actions
 void	ClapTrap::attack(std::string const &target)
 {
-	std::cout << this->_name << " attack " << target
+	std::cout << "ClapTrap "<< this->_name << " attack " << target
 	<< ", causing " << this->_attack_damage << " points of damage!" << std::endl;
 }
 
@@ -38,7 +38,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hitpoints)
 	{
-		std::cout << this->_name << " take " << amount << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage!" << std::endl;
 		if (this->_hitpoints - amount <= 0)
 		{
 			this->_hitpoints = 0;
@@ -48,21 +48,19 @@ void	ClapTrap::takeDamage(unsigned int amount)
 			this->_hitpoints -= amount;
 	}
 	else
-		std::cout << "God! Stop please! " << this->_name << " is already broken and cannot take any damage!" << std::endl;
+		std::cout << "God! Stop please! ClapTrap " << this->_name << " is already broken and cannot take any damage!" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_hitpoints < 10)
 	{
-		std::cout << this->_name << " has been repaired for " << amount << " hitpoints! You're very kind person! Thx! ( ˘ ³˘)♥" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has been repaired for " << amount << " hitpoints! You're very kind person! Thx! ( ˘ ³˘)♥" << std::endl;
 		if (this->_hitpoints + amount > 10)
 			this->_hitpoints = 10;
 		else
 			this->_hitpoints += amount;
 	}
 	else
-		std::cout << "Thank you, dear! You don't need to bother, cuz " << this->_name << " is healthy and still in it's prime!" << std::endl;
+		std::cout << "Thank you, dear! You don't need to bother, cuz ClapTrap " << this->_name << " is healthy and still in it's prime!" << std::endl;
 }
-
-

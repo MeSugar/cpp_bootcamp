@@ -1,4 +1,4 @@
-NAME		=	Aaaaand...OPEN!
+NAME		=	ClapTrap
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
