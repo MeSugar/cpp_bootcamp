@@ -1,4 +1,4 @@
-NAME		=	AnimalPlanet
+NAME		=	AnimalPlanet2
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
