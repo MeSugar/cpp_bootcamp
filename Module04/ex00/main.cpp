@@ -21,5 +21,10 @@ int main()
     const WrongAnimal* WrongI = new WrongCat();
     WrongI->makeSound(); //will output the cat sound!
     WrongMeta->makeSound();
+    delete meta;
+    delete j;
+    delete i;
+    delete WrongMeta;
+    delete WrongI;
     return (0);
 }
