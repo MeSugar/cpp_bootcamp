@@ -1,12 +1,12 @@
-NAME		=	AnimalPlanet1
+NAME		=	Materia
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 CC			=	clang++
 
-INCLUDES	=	ClassAnimal.hpp ClassDog.hpp ClassCat.hpp ClassWrongAnimal.hpp ClassWrongCat.hpp
+INCLUDES	=	ClassAMateria.hpp ClassIce.hpp ClassCharacter.hpp
 
-SRCS		=	ClassAnimal.cpp ClassDog.cpp ClassCat.cpp ClassWrongAnimal.cpp ClassWrongCat.cpp main.cpp
+SRCS		=	ClassAMateria.cpp ClassIce.cpp ClassCharacter.cpp main.cpp
 
 all : $(NAME)
 
