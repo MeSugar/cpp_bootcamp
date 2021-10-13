@@ -105,5 +105,5 @@ void	PhoneBook::print_contact_content(void)
 	if (buf.size() == 1 && (buf[0] > '0' && buf[0] <= c[0]))
 		this->_contact[atoi(buf.c_str()) - 1].print_content();
 	else
-		std::cout << "Invalud input. Returning to the main menu..." << std::endl;
+		std::cout << "Invalid input. Returning to the main menu..." << std::endl;
 }
