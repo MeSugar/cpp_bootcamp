@@ -1,27 +1,28 @@
 #include "ClassAMateria.hpp"
 #include "ClassIce.hpp"
+#include "ClassCure.hpp"
 #include "ClassCharacter.hpp"
+#include "ClassMateriaSource.hpp"
 
 
 int main()
 {
-    Ice a;
-    Ice g;
-
-    std::cout << a.getType() << std::endl;
-    AMateria *b = a.clone();
-    std::cout << b->getType() << std::endl;
-    Character aa("god");
-
-    std::cout << aa.getName() << std::endl;
-    Character bb(aa);
-    std::cout << bb.getName() << std::endl;
-    aa.setName("sod");
-    bb.setName("bod");
-    std::cout << aa.getName() << std::endl;
-    std::cout << bb.getName() << std::endl;
-    bb = aa;
-    std::cout << bb.getName() << std::endl;
-    delete b;
-    return (0);
+    IMateriaSource* src = new MateriaSource();
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+    ICharacter* me = new Character("me");
+    AMateria* tmp;
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
+    me->unequip(1);
+    delete tmp;
+    ICharacter* bob = new Character("bob");
+    me->use(0, *bob);
+    me->use(1, *bob);
+    delete bob;
+    delete me;
+    delete src;
+    return 0;
 }

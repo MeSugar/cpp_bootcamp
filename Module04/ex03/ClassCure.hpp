@@ -1,19 +1,19 @@
-#ifndef ICE_H
-# define ICE_H
+#ifndef CURE_H
+# define CURE_H
 
 #include <iostream>
 #include "ClassAMateria.hpp"
 #include "ClassCharacter.hpp"
 
-class Ice : public AMateria
+class Cure : public AMateria
 {
 protected:
 
 public:
-	Ice(void);
-	Ice(Ice const &src);
-	~Ice(void);
-	Ice	&operator=(Ice const &src);
+	Cure(void);
+	Cure(Cure const &src);
+	~Cure(void);
+	Cure	&operator=(Cure const &src);
 
 	AMateria	*clone(void) const;
 	void		use(ICharacter &target);
