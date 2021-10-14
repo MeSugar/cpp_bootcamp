@@ -24,20 +24,23 @@ Point   &Point::operator=(Point const &)
 
 float Point::getX(void) const
 {
-	return ((float)this->x.getRawBits() / (float)(1 << 8));
+	return (this->x.toFloat());
 }
 
 float Point::getY(void) const
 {
-	return ((float)this->y.getRawBits() / (float)(1 << 8));
+	return (this->y.toFloat());
 }
 
 static float CalcTriArea(Point const &v1, Point const &v2, Point const &v3)
 {
-  float det = 0.0f;
+//   float det = 0.0f;
 
-  det = ((v1.getX() - v3.getX()) * (v2.getY() - v3.getY())) - ((v2.getX() - v3.getX()) * (v1.getY() - v3.getY()));
-  return (det / 2.0f);
+//   det = ((v1.getX() - v3.getX()) * (v2.getY() - v3.getY())) - ((v2.getX() - v3.getX()) * (v1.getY() - v3.getY()));
+//   std::cout << det << std::endl;
+//   return (det / 2.0f);
+	// return (std::abs((v1.getX() * (v2.getY() - v3.getY()) + v2.getX() * (v3.getY() - v1.getY()) + v3.getX() * (v1.getY() - v2.getY()) / 2.0)));
+	return (std::abs((v1.getX() * (v2.getY() - v3.getY()) + v2.getX() * (v3.getY() - v1.getY()) + v3.getX() * (v1.getY() - v2.getY())) / 2.0));
 }
 
 bool    bsp(Point const a, Point const b, Point const c, Point const point)
@@ -47,8 +50,14 @@ bool    bsp(Point const a, Point const b, Point const c, Point const point)
 	float Area2 = CalcTriArea(point, a, c);
 	float Area3 = CalcTriArea(point, a, b);
 
-	if((Area1 + Area2 + Area3) > TotalArea)
-		return false;
-	else
-		return true;
+	// std::cout << a.getX() << "   " << (float)a.getY() << std::endl;
+	// std::cout << b.getX() << "   " << (float)b.getY() << std::endl;
+	// std::cout << c.getX() << "   " << (float)c.getY() << std::endl;
+	// std::cout << point.getX() << "   " << (float)point.getY() << std::endl;
+
+	// if((Area1 + Area2 + Area3) > TotalArea)
+	// 	return true;
+	// else
+	// 	return false;
+	return (TotalArea == Area1 + Area2 + Area3);
 }

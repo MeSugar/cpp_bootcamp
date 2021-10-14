@@ -91,12 +91,12 @@ bool	Fixed::operator!=(Fixed const &src) const
 
 Fixed Fixed::operator+(Fixed const &src) const
 {
-	return (Fixed(this->fixedValue + src.getRawBits()));
+	return (Fixed(this->toFloat() + src.toFloat()));
 }
 
 Fixed Fixed::operator-(Fixed const &src) const
 {
-	return (Fixed(this->fixedValue - src.getRawBits()));
+	return (Fixed(this->toFloat() - src.toFloat()));
 }
 
 Fixed Fixed::operator*(Fixed const &src) const
