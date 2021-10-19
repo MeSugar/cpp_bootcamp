@@ -19,7 +19,7 @@ int main()
     std::cout << "------------Insane animals------------" << std::endl;
     const WrongAnimal* WrongMeta = new WrongAnimal();
     const WrongAnimal* WrongI = new WrongCat();
-    WrongI->makeSound(); //will output the cat sound!
+    WrongI->makeSound();
     WrongMeta->makeSound();
     delete meta;
     delete j;

@@ -4,8 +4,9 @@ Dog::Dog(std::string word) : Animal(), brain(new Brain())
 {
 	std::cout << "Dog default constructor called" << std::endl;
 	Animal::type = "Dog";
-	for (int i = 0; i < 100; i++)
-		this->brain->ideas[i] = word;
+	// for (int i = 0; i < 100; i++)
+	// 	this->brain->ideas[i] = word;
+	this->brain->setIdeas(word);
 }
 
 Dog::Dog(Dog const &src) : Animal(src)
@@ -38,11 +39,14 @@ void	Dog::makeSound(void) const
 void Dog::printArray(void)
 {
 	for (int i = 0; i < 100; i++)
-		std::cout << this->brain->ideas[i] << std::endl;
+		// std::cout << this->brain->ideas[i] << std::endl;
+		std::cout << this->brain->getIdea(i) << std::endl;
+
 }
 
 void Dog::setArray(std::string word)
 {
-	for (int i = 0; i < 100; i++)
-		this->brain->ideas[i] = word;
+	// for (int i = 0; i < 100; i++)
+	// 	this->brain->ideas[i] = word;
+	this->brain->setIdeas(word);
 }

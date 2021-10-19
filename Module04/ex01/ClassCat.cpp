@@ -4,8 +4,9 @@ Cat::Cat(std::string word) : Animal(), brain(new Brain())
 {
 	std::cout << "Cat default constructor called" << std::endl;
 	Animal::type = "Cat";
-	for (int i = 0; i < 100; i++)
-		this->brain->ideas[i] = word;
+	// for (int i = 0; i < 100; i++)
+	// 	this->brain->ideas[i] = word;
+	this->brain->setIdeas(word);
 }
 
 Cat::Cat(Cat const &src) : Animal(src)
@@ -39,11 +40,13 @@ void	Cat::makeSound(void) const
 void Cat::printArray(void)
 {
 	for (int i = 0; i < 100; i++)
-		std::cout << this->brain->ideas[i] << std::endl;
+		// std::cout << this->brain->ideas[i] << std::endl;
+		std::cout << this->brain->getIdea(i) << std::endl;
 }
 
 void Cat::setArray(std::string word)
 {
-	for (int i = 0; i < 100; i++)
-		this->brain->ideas[i] = word;
+	// for (int i = 0; i < 100; i++)
+	// 	this->brain->ideas[i] = word;
+	this->brain->setIdeas(word);
 }

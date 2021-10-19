@@ -23,3 +23,14 @@ Brain &Brain::operator=(Brain const &src)
 		this->ideas[i] = src.ideas[i];
 	return (*this);
 }
+
+void	Brain::setIdeas(std::string const &word)
+{
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = word;
+}
+
+std::string &Brain::getIdea(int indx)
+{
+	return (this->ideas[indx]);
+}
