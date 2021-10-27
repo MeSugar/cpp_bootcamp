@@ -12,15 +12,6 @@ int main(int ac, char **av)
         a.toInt();
         a.toFloat();
         a.toDouble();
-		// ss << av[1];
-		// // std::cout << ss.str() << std::endl;
-		// std::string str = ss.str();
-		// std::cout << std::atof(str.c_str()) << std::endl;
-		// std::cout << std::atoi(str.c_str()) << std::endl;
-		// int a = 42;
-		// float b = (double)a + 0.3;
-		// std::cout << a << std::endl;
-		// std::cout << b << std::endl;
 	}
 	else
 	{
