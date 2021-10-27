@@ -83,10 +83,12 @@ void identify(Base* p)
 
 	if (objA)
 		objA->printTypeA();
-	if (objB)
+	else if (objB)
 		objB->printTypeB();
-	if (objC)
+	else if (objC)
 		objC->printTypeC();
+	else
+		std::cout << "Connot found appropriate class" << std:: endl;
 }
 
 void identify(Base& p)
@@ -95,6 +97,7 @@ void identify(Base& p)
 	{
 		A& objA = dynamic_cast<A &>(p);
 		objA.printTypeA();
+		return ;
 	}
 	catch(std::bad_cast& bc)
 	{
@@ -103,6 +106,7 @@ void identify(Base& p)
 	{
 		B& objB = dynamic_cast<B &>(p);
 		objB.printTypeB();
+		return ;
 	}
 	catch(std::bad_cast& bc)
 	{
@@ -111,10 +115,12 @@ void identify(Base& p)
 	{
 		C& objC = dynamic_cast<C &>(p);
 		objC.printTypeC();
+		return ;
 	}
 	catch(std::bad_cast& bc)
 	{
 	}
+	std::cout << "Connot found appropriate class" << std:: endl;
 }
 
 int main()
